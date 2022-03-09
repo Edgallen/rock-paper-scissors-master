@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--=============== FAVICON ===============-->
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
     
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -13,7 +13,37 @@
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
   <body>
+    <!--=============== HEADER SCORE ===============-->
+    <header class="header">
+      <div class="header__container">
+        <img src="assets/img/logo.svg" alt="" class="header__logo">
 
+        <div class="header__card">
+          <span class="header__title">score</span>
+          <span class="header__count">12</span>
+        </div>
+      </div>
+    </header>
+
+    <!--=============== GAME SECTION ===============-->
+    <section class="game" id="game">
+      <div class="game__container" id="step-1">
+        <div class="game__selector selector">
+          <img src="assets/img/icon-paper.svg" alt="" class="game__icon">
+        </div>
+
+        <div class="game__selector selector">
+          <img src="assets/img/icon-scissors.svg" alt="" class="game__icon">
+        </div>
+
+        <div class="game__selector selector">
+          <img src="assets/img/icon-rock.svg" alt="" class="game__icon">
+        </div>
+      </div>
+    </section>
+
+    <!--=============== RULES ===============-->
+    
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
