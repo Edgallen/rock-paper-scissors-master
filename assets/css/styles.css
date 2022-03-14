@@ -11,12 +11,18 @@
   --header-outline: hsl(217, 16%, 45%);
   /* Primary */
   --scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --scissors-color: hsl(39, 89%, 49%);
   --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --paper-color: hsl(230, 89%, 62%);
   --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --rock-color: hsl(349, 71%, 52%);
   --lizard-gradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
   --cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
   /* Shadows */
   --shadow-inline: hsl(240, 24%, 89%);
+  --scissors-shadow: hsl(29, 78%, 44%);
+  --paper-shadow: hsl(228, 66%, 45%);
+  --rock-shadow: hsl(346, 75%, 35%);
 
   /*========== Font and typography ==========*/
   --body-font:'Barlow Semi Condensed', sans-serif;
@@ -49,8 +55,9 @@
   --mb-3-5: 3.5rem;
 
   /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+  --z-buttons: 10;
+  --z-tooltip: 100;
+  --z-fixed: 1000;
 }
 
    /*=============== BASE ===============*/
@@ -115,9 +122,22 @@ span{
   border-radius: 4rem;
   width: 130px;
   height: 130px;
-  /* filter: drop-shadow(0px 7px 1px); */
   box-shadow: inset 0px 5px var(--shadow-inline);
-  box-shadow: 0px 7px 1px white;
+}
+
+.rock{
+  border-color: var(--rock-color);
+  filter: drop-shadow(0px 7px 1px var(--rock-shadow));
+}
+
+.paper{
+  border-color: var(--paper-color);
+  filter: drop-shadow(0px 7px 1px var(--paper-shadow));
+}
+
+.scissors{
+  border-color: var(--scissors-color);
+  filter: drop-shadow(0px 7px 1px var(--scissors-shadow));
 }
 
 /*=============== LAYOUT ===============*/
@@ -177,6 +197,7 @@ span{
 }
 
 .game__container{
+  position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -189,22 +210,59 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: var(--z-buttons);
+  transition: .4s transform;
 }
 
 .game__selector:nth-child(1){
-  border-color: hsl(230, 89%, 62%);
   margin-right: var(--mb-0-75);
 }
 
 .game__selector:nth-child(2){
-  border-color: hsl(39, 89%, 49%);
   margin-left: var(--mb-0-75);
 }
 
-.game__selector:nth-child(3){
-  border-color: hsl(349, 71%, 52%);
+.game__selector:hover{
+  transform: translate(0px, -20px);
 }
 
 .game__icon{
   width: 40px;
+}
+
+.game__background{
+  position: absolute;
+  width: 250px;
+  transform: translate(0px, 30px);
+}
+
+/*=============== GAME-RULES ===============*/
+.game__modal{
+  display: none;  /* Uncomment!!!!!!! */
+  position: absolute;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  padding: var(--mb-1);
+  gap: 5rem;
+  transform: translate(0px, -150px);
+  border-radius: .5rem;
+  background-color: white;
+  z-index: var(--z-tooltip);
+}
+
+.game__modal-title{
+  font-size: var(--h1-font-size);
+  color: var(--dark-text);
+  text-transform: uppercase;
+}
+
+.game__modal-close{
+  font-size: var(--big-font-size);
+  font-weight: var(--font-medium);
+  color: var(--header-outline);
+}
+
+.game__rules{
+  display: none;
 }

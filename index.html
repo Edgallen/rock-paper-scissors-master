@@ -9,6 +9,9 @@
     
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--=============== REMIXICON ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
@@ -28,22 +31,33 @@
     <!--=============== GAME SECTION ===============-->
     <section class="game" id="game">
       <div class="game__container" id="step-1">
-        <div class="game__selector selector">
+        <div class="game__selector selector paper">
           <img src="assets/img/icon-paper.svg" alt="" class="game__icon">
         </div>
 
-        <div class="game__selector selector">
+        <div class="game__selector selector scissors">
           <img src="assets/img/icon-scissors.svg" alt="" class="game__icon">
         </div>
 
-        <div class="game__selector selector">
+        <div class="game__selector selector rock">
           <img src="assets/img/icon-rock.svg" alt="" class="game__icon">
         </div>
+
+        <img src="assets/img/bg-triangle.svg" alt="" class="game__background">
+
+        <div class="game__modal">
+          <h2 class="game__modal-title">Rules</h2>
+          <img src="assets/img/image-rules.svg" alt="" class="game__modal-img">
+          <i class="ri-close-line game__modal-close"></i>
+        </div>
+      </div>
+
+      <div class="game__rules">
+        <button class="game__rules-button">Rules</button>
       </div>
     </section>
 
     <!--=============== RULES ===============-->
-    
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
