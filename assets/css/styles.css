@@ -125,6 +125,17 @@ span{
   box-shadow: inset 0px 5px var(--shadow-inline);
 }
 
+.button{
+  font-size: var(--normal-font-size);
+  letter-spacing: .2rem;
+  color: var(--shadow-inline);
+  text-transform: uppercase;
+  background-color: transparent;
+  padding: var(--mb-0-5) var(--mb-2);
+  border: 2px solid var(--shadow-inline);
+  border-radius: .4rem;
+}
+
 .rock{
   border-color: var(--rock-color);
   filter: drop-shadow(0px 7px 1px var(--rock-shadow));
@@ -238,17 +249,17 @@ span{
 
 /*=============== GAME-RULES ===============*/
 .game__modal{
-  display: none;  /* Uncomment!!!!!!! */
   position: absolute;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--mb-1);
-  gap: 5rem;
+  padding: var(--mb-1-5);
+  gap: 4rem;
   transform: translate(0px, -150px);
   border-radius: .5rem;
   background-color: white;
   z-index: var(--z-tooltip);
+  transition: .4s opacity;
 }
 
 .game__modal-title{
@@ -264,5 +275,22 @@ span{
 }
 
 .game__rules{
-  display: none;
+  /* display: none; */
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.game__rules-button{
+  transition: .4s opacity;
+}
+
+/* Active States */
+
+.opacity-hidden {
+  opacity: 0;
+}
+
+.display-none{
+ display: none;
 }
