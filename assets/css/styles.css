@@ -6,6 +6,7 @@
 
   /*========== Colors ==========*/
   /* Neutral */
+  --title-color: hsl(195, 100%, 99%);
   --dark-text: hsl(229, 25%, 31%);
   --score-text: hsl(229, 64%, 46%);
   --header-outline: hsl(217, 16%, 45%);
@@ -20,6 +21,7 @@
   --cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
   /* Shadows */
   --shadow-inline: hsl(240, 24%, 89%);
+  --text-shadow: hsl(0, 0%, 21%);
   --scissors-shadow: hsl(29, 78%, 44%);
   --paper-shadow: hsl(228, 66%, 45%);
   --rock-shadow: hsl(346, 75%, 35%);
@@ -123,16 +125,21 @@ span{
   width: 130px;
   height: 130px;
   box-shadow: inset 0px 5px var(--shadow-inline);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-buttons);
+  transition: .4s transform;
 }
 
 .button{
   font-size: var(--normal-font-size);
   letter-spacing: .2rem;
-  color: var(--shadow-inline);
+  color: var(--title-color);
   text-transform: uppercase;
   background-color: transparent;
   padding: var(--mb-0-5) var(--mb-2);
-  border: 2px solid var(--shadow-inline);
+  border: 2px solid var(--title-color);
   border-radius: .4rem;
 }
 
@@ -212,7 +219,7 @@ span{
   justify-content: center;
 }
 
-.game__container-step1{
+.game__container-selectorsWindow{
   position: relative;
   display: flex;
   justify-content: center;
@@ -220,20 +227,15 @@ span{
   gap: var(--mb-3-5);
   margin: 0 auto;
   width: 330px;
+  transition: .3s;
 }
 
-.game__container-step2{
+.game__container-resultsWindow{
   display: flex;
   justify-content: center;
+  margin-top: var(--mb-2-5);
   gap: var(--mb-2);
-}
-
-.game__selector{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: var(--z-buttons);
-  transition: .4s transform;
+  transition: .5s;
 }
 
 .game__selector:hover{
@@ -244,6 +246,16 @@ span{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.game__result-title{
+  font-size: 1rem;
+  font-weight: var(--font-medium);
+  margin-top: var(--mb-2);
+  letter-spacing: .1rem;
+  color: var(--title-color);
+  text-transform: uppercase;
+  text-shadow: 0px 3px 3px var(--text-shadow);
 }
 
 .game__icon{
@@ -291,13 +303,14 @@ span{
 }
 
 .game__rules-button{
-  /* position: absolute; */
+  position: absolute;
+  bottom: 10%;
   transition: .4s opacity;
 }
 
 /* Active States */
 
-.opacity-hidden {
+.opacity-hidden{
   opacity: 0;
 }
 

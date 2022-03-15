@@ -31,7 +31,7 @@
     <!--=============== GAME SECTION ===============-->
     <section class="game" id="game">
       <div class="game__container">
-        <div class="game__container-step1" id="step1">
+        <div class="game__container-selectorsWindow" id="selectorsWindow">
           <div class="game__selector selector paper">
             <img src="assets/img/icon-paper.svg" alt="" class="game__icon">
           </div>
@@ -47,23 +47,23 @@
           <img src="assets/img/bg-triangle.svg" alt="" class="game__background">
         </div>
 
-        <!-- <div class="game__container-step2 display-none" id="step2">
+        <div class="game__container-resultsWindow display-none" id="resultsWindow">
           <div class="game__result">
-            <div class="game__selector selector scissors">
+            <div class="game__result-selector selector scissors">
               <img src="assets/img/icon-scissors.svg" alt="" class="game__icon">
             </div>
 
-            <span class="game__title">you picked</span>
+            <span class="game__result-title">you picked</span>
           </div>
 
           <div class="game__result">
-            <div class="game__selector selector rock">
+            <div class="game__result-selector selector rock">
               <img src="assets/img/icon-rock.svg" alt="" class="game__icon">
             </div>
 
-            <span class="game__title">you picked</span>
+            <span class="game__result-title">the house picked</span>
           </div>
-        </div> -->
+        </div>
 
         <div class="game__modal display-none opacity-hidden">
           <h2 class="game__modal-title">Rules</h2>
@@ -71,13 +71,14 @@
           <i class="ri-close-line game__modal-close"></i>
         </div>
       </div>
-
-      <div class="game__rules">
-        <button class="game__rules-button button">Rules</button>
-      </div>
     </section>
 
     <!--=============== RULES ===============-->
+    <footer class="footer">
+      <div class="game__rules">
+        <button class="game__rules-button button">Rules</button>
+      </div>
+    </footer>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
