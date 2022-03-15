@@ -204,17 +204,28 @@ span{
 /*=============== GAME ===============*/
 .game{
   position: relative;
-  margin-top: 5rem;
+  margin-top: var(--mb-3-5);
 }
 
 .game__container{
+  display: flex;
+  justify-content: center;
+}
+
+.game__container-step1{
   position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--mb-2);
+  gap: var(--mb-3-5);
   margin: 0 auto;
   width: 330px;
+}
+
+.game__container-step2{
+  display: flex;
+  justify-content: center;
+  gap: var(--mb-2);
 }
 
 .game__selector{
@@ -225,16 +236,14 @@ span{
   transition: .4s transform;
 }
 
-.game__selector:nth-child(1){
-  margin-right: var(--mb-0-75);
-}
-
-.game__selector:nth-child(2){
-  margin-left: var(--mb-0-75);
-}
-
 .game__selector:hover{
   transform: translate(0px, -20px);
+}
+
+.game__result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game__icon{
@@ -244,7 +253,7 @@ span{
 .game__background{
   position: absolute;
   width: 250px;
-  transform: translate(0px, 30px);
+  transform: translate(0px, 45px);
 }
 
 /*=============== GAME-RULES ===============*/
@@ -272,16 +281,17 @@ span{
   font-size: var(--big-font-size);
   font-weight: var(--font-medium);
   color: var(--header-outline);
+  cursor: pointer;
 }
 
 .game__rules{
-  /* display: none; */
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: var(--mb-3-5);
 }
 
 .game__rules-button{
+  /* position: absolute; */
   transition: .4s opacity;
 }
 

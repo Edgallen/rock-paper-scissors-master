@@ -23,3 +23,7 @@ rulesButton.addEventListener('click', () => {
     closeWindow(modalWindow);
   }
 });
+
+closeButton.addEventListener('click', () => {
+  closeWindow(modalWindow);
+})
