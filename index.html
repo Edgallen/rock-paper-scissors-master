@@ -23,7 +23,7 @@
 
         <div class="header__card">
           <span class="header__title">score</span>
-          <span class="header__count">12</span>
+          <span class="header__count">0</span>
         </div>
       </div>
     </header>
@@ -31,7 +31,7 @@
     <!--=============== GAME SECTION ===============-->
     <section class="game" id="game">
       <div class="game__container">
-        <div class="game__container-selectorsWindow" id="selectorsWindow">
+        <div class="game__container-selectorsWindow " id="selectorsWindow">
           <div class="game__selector selector paper">
             <img src="assets/img/icon-paper.svg" alt="" class="game__icon">
           </div>
@@ -50,24 +50,34 @@
         <div class="game__container-resultsWindow display-none" id="resultsWindow">
           <div class="game__result">
             <div class="game__result-player">
-              
-            </div>
-
-            <div class="game__result-computer">
               <div class="game__result-selector selector rock">
                 <img src="assets/img/icon-rock.svg" alt="" class="game__icon">
               </div>
+        
+              <span class="game__result-title">you picked</span>
+            </div>
+
+            <div class="game__result-computer">
+              <div class="game__result-background">
+                
+              </div>
 
               <span class="game__result-title">the house picked</span>
-            </div>
           </div>
         </div>
 
-        <div class="game__modal display-none opacity-hidden">
-          <h2 class="game__modal-title">Rules</h2>
-          <img src="assets/img/image-rules.svg" alt="" class="game__modal-img">
-          <i class="ri-close-line game__modal-close"></i>
+        <div class="game__restart display-none opacity-hidden">
+          <h2 class="game__restart-title"></h2>
+          <button class="game__restart-button button">play again</button>
         </div>
+
+        
+      </div>
+
+      <div class="game__modal display-none opacity-hidden">
+        <h2 class="game__modal-title">Rules</h2>
+        <img src="assets/img/image-rules.svg" alt="" class="game__modal-img">
+        <i class="ri-close-line game__modal-close"></i>
       </div>
     </section>
 

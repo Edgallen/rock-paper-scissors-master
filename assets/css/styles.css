@@ -21,10 +21,13 @@
   --cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
   /* Shadows */
   --shadow-inline: hsl(240, 24%, 89%);
-  --text-shadow: hsl(0, 0%, 21%);
+  --selector-shadow: hsl(220, 47%, 18%);
   --scissors-shadow: hsl(29, 78%, 44%);
   --paper-shadow: hsl(228, 66%, 45%);
   --rock-shadow: hsl(346, 75%, 35%);
+
+  --shadow-x: rgba(0, 0, 0, 0.19);
+  --shadow-y: rgba(0, 0, 0, 0.23);
 
   /*========== Font and typography ==========*/
   --body-font:'Barlow Semi Condensed', sans-serif;
@@ -211,12 +214,13 @@ span{
 /*=============== GAME ===============*/
 .game{
   position: relative;
+  display: flex;
+  justify-content: center;
   margin-top: var(--mb-3-5);
 }
 
 .game__container{
-  display: flex;
-  justify-content: center;
+  height: 350px;
 }
 
 .game__container-selectorsWindow{
@@ -232,9 +236,11 @@ span{
 
 .game__container-resultsWindow{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-top: var(--mb-2-5);
-  gap: var(--mb-2);
+  /* margin-top: var(--mb-2-5);
+  gap: var(--mb-2); */
   transition: .5s;
 }
 
@@ -243,13 +249,14 @@ span{
 }
 
 .game__result-title{
+  position: absolute;
   font-size: 1rem;
   font-weight: var(--font-medium);
-  margin-top: var(--mb-2);
   letter-spacing: .1rem;
   color: var(--title-color);
   text-transform: uppercase;
-  text-shadow: 0px 3px 3px var(--text-shadow);
+  text-shadow: var(--shadow-x) 0px 10px 20px, var(--shadow-y) 0px 6px 6px;
+  transform: translate(0px, 160px);
 }
 
 .game__result{
@@ -265,6 +272,13 @@ span{
   width: 150px;
 }
 
+.game__result-background{
+  background-color: var(--selector-shadow);
+  border-radius: 4rem;
+  width: 130px;
+  height: 130px;
+}
+
 .game__icon{
   width: 40px;
 }
@@ -275,15 +289,50 @@ span{
   transform: translate(0px, 45px);
 }
 
+.game__restart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  gap: var(--mb-1);
+}
+
+.game__restart-title{
+  font-size: var(--biggest-font-size);
+  color: var(--title-color);
+  text-transform: uppercase;
+  text-shadow: var(--shadow-x) 0px 10px 20px, var(--shadow-y) 0px 6px 6px;
+}
+
+.game__restart-button{
+  font-weight: var(--font-bold);
+  width: 200px;
+  color: var(--dark-text);
+  background-color: var(--title-color);
+  padding: var(--mb-0-75) var(--mb-2);
+  box-shadow: var(--shadow-x) 0px 10px 20px, var(--shadow-y) 0px 6px 6px;
+  transition: .4s color;
+  transition: .4s background-color;
+}
+
+.game__restart-button:hover{
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  background-color: var(--dark-text);
+}
+
 /*=============== GAME-RULES ===============*/
+
+
 .game__modal{
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 330px;
   padding: var(--mb-1-5);
   gap: 4rem;
-  transform: translate(0px, -150px);
+  transform: translate(0px, -380px);
   border-radius: .5rem;
   background-color: white;
   z-index: var(--z-tooltip);
@@ -306,13 +355,22 @@ span{
 .game__rules{
   display: flex;
   justify-content: center;
-  margin-top: var(--mb-3-5);
+  margin-top: var(--mb-2);
 }
 
 .game__rules-button{
   position: absolute;
-  bottom: 5%;
+  box-shadow: var(--shadow-x) 0px 10px 20px, var(--shadow-y) 0px 6px 6px;
+  width: 125px;
   transition: .4s opacity;
+  transition: .4s color;
+  transition: .4s background-color;
+}
+
+.game__rules-button:hover{
+  font-weight: var(--font-bold);
+  color: var(--dark-text);
+  background-color: var(--title-color);
 }
 
 /* Active States */
