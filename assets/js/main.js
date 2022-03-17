@@ -87,6 +87,12 @@ const addRestart = (string) => {
   openWindow(div, 1000);
 };
 
+const removeRestart = () => {
+  const div = document.querySelector('.game__restart');
+
+  closeWindow(div, 10);
+};
+
 const resetGame = () => {
   removePlayerSelector();
   removeComputerSelector();
@@ -101,17 +107,11 @@ const defineWinner = (element) => {
   
   if (playerObj.beats === computerObj.name) {
     addRestart('you won');
-    scoreCount.textContent++;
-    console.log(playerObj);
-    console.log(computerObj);
+    setTimeout(() => scoreCount.textContent++, 1000);
   } else if (computerObj.beats === playerObj.name) {
     addRestart('you lost');
-    console.log(computerObj);
-    console.log(playerObj);
   } else if (computerObj.name === playerObj.name) {
     addRestart('tie');
-    console.log(computerObj);
-    console.log(playerObj);
   }
 };
 
@@ -138,12 +138,16 @@ const restartButton = document.querySelector('.game__restart-button');
 
 restartButton.addEventListener('click', () => {
   closeWindow(resultsWindow, 210);
-  setTimeout(() => openWindow(selectorsWindow, 10), 210);
-  setTimeout(() => resetGame(), 220);
-  setTimeout(() => restartTitle.textContent = ``, 220)
-  setTimeout(() => computerPick.pop(), 220)
-});
 
+  function restartGame() {
+    openWindow(selectorsWindow, 10);
+    resetGame();
+    restartTitle.textContent = ``;
+    removeRestart();
+    computerPick.pop();
+  }; 
+  setTimeout(() => restartGame(), 210);
+});
 /*========== GAME ==========*/
 const computerPick = [];
 const selectorsWindow = document.querySelector('.game__container-selectorsWindow');
@@ -167,7 +171,7 @@ const selectors = [
   }
 ];
 
-function game() {
+(function game() {
   selectorButtons.forEach(element => {
     element.addEventListener('click', (element) => {
       const chosenSelector = getSelector(element);
@@ -178,10 +182,6 @@ function game() {
 
       addComputerSelector();
       defineWinner(element);
-      console.log(computerPick);
     });
   });
-  
-};
-
-game();
+}) ();

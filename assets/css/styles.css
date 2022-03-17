@@ -244,6 +244,10 @@ span{
   transition: .5s;
 }
 
+.game__selector{
+  cursor: pointer;
+}
+
 .game__selector:hover{
   transform: translate(0px, -20px);
 }
@@ -332,7 +336,7 @@ span{
   width: 330px;
   padding: var(--mb-1-5);
   gap: 4rem;
-  transform: translate(0px, -380px);
+  transform: translate(0px, -450px);
   border-radius: .5rem;
   background-color: white;
   z-index: var(--z-tooltip);
@@ -355,7 +359,7 @@ span{
 .game__rules{
   display: flex;
   justify-content: center;
-  margin-top: var(--mb-2);
+  margin-top: var(--mb-1-5);
 }
 
 .game__rules-button{
